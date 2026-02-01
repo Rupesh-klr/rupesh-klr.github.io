@@ -14,6 +14,11 @@ import LogoShowcase from './LogoShowcase';
 import TestimonialsDump from './TestimonialsDump';
 import GlowCard from './GlowCard';
 import GlobalModal from './GlobalModal';
+import Sidebar from './Sidebar';
+import Footer from './Footer';
+import FloatingAssistant from './FloatingAssistant';
+import GlassScrollbar from './GlassScrollbar';
+import CyberCursor from './CyberCursor';
 
 
 export {
@@ -35,5 +40,10 @@ export {
   LogoShowcase,
   TestimonialsDump,
   GlowCard,
-  GlobalModal
+  GlobalModal,
+  Sidebar,
+  Footer,
+  FloatingAssistant,
+  GlassScrollbar,
+  CyberCursor
 };

@@ -1,64 +1,108 @@
 import React from "react";
 import { motion } from "framer-motion";
-import BubbleLoader from "./BubbleLoader";
+import BubbleLoader from "./BubbleLoader"; // Ensure this path is correct
 
 const GlobalModal = ({ isOpen, onClose, type, data }) => {
   if (!isOpen) return null;
 
-  return (
-    // z-[101] as requested, with a semi-transparent mask
-    <div className="fixed inset-0 z-[101] flex items-center justify-center bg-black/60 backdrop-blur-sm">
+  // Helper to determine the Modal Title
+  const getModalTitle = () => {
+    if (type === "legal") return data?.title || "Legal";
+    if (type === "resume-sample-template") return "Resume Collection";
+    return "Details";
+  };
 
-      {/* Modal Window */}
+  return (
+    // Backdrop
+    <div className="fixed inset-0 z-[101] flex items-center justify-center bg-black/60 backdrop-blur-sm">
+      
+      {/* Modal Container */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
-        className="bg-[#1d1836] w-[90%] max-w-4xl p-8 rounded-2xl relative border border-white/10 shadow-card"
+        className="bg-[#1d1836] w-[90%] max-w-4xl p-8 rounded-2xl relative border border-white/10 shadow-card max-h-[90vh] flex flex-col"
       >
+        
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-secondary hover:text-white text-xl"
+          className="absolute top-4 right-4 text-secondary hover:text-white text-xl z-10"
         >
           ✕
         </button>
 
-        {/* Dynamic Content based on Type */}
-        <div className="mt-4">
-          <h2 className="text-white text-3xl font-bold mb-4">
-            {type === "resume-sample-template" ? "Resume Collection" : "Details"}
+        {/* --- HEADER --- */}
+        <div className="mt-2 mb-4 shrink-0">
+          <h2 className="text-white text-3xl font-bold">
+            {getModalTitle()}
           </h2>
-
-          <div className="text-secondary text-[16px] leading-[30px]">
-            {/* Render your data here */}
-            <p>Viewing Data for: <span className="text-white">{data?.name}</span></p>
-            <p>Role: <span className="text-white">{data?.roles}</span></p>
-
-            {/* You can switch logic here later for complex designs */}
-            <div className="mt-5 p-5 bg-black-100 rounded-xl border border-white/5">
-              [Resume Template Content Will Load Here based on Key: {data?.modelKey}]
-            </div>
-          </div>
         </div>
 
-        {/* Footer Actions */}
-        <div className="mt-8 flex justify-end gap-4">
+        {/* --- BODY CONTENT (Scrollable) --- */}
+        <div className="text-secondary text-[16px] leading-[30px] overflow-y-auto pr-2 custom-scrollbar">
+          
+          {/* CASE 1: LEGAL (Privacy Policy / Terms) */}
+          {type === "legal" && data && (
+            <div className="space-y-4">
+              <p className="text-sm text-gray-400 border-b border-white/10 pb-2">
+                Last Updated: {data.lastUpdated}
+              </p>
+              <div className="space-y-6">
+                {data.content?.map((point, index) => (
+                  <div key={index}>
+                    <h4 className="text-white font-bold text-lg mb-1">
+                      {point.heading}
+                    </h4>
+                    <p className="text-secondary text-sm leading-relaxed text-justify">
+                      {point.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* CASE 2: RESUME COLLECTION */}
+          {type === "resume-sample-template" && (
+            <div>
+              <p>Viewing Data for: <span className="text-white">{data?.name}</span></p>
+              <p>Role: <span className="text-white">{data?.roles}</span></p>
+
+              <div className="mt-5 p-5 bg-black-100 rounded-xl border border-white/5 min-h-[200px] flex items-center justify-center">
+                 {/* Logic for showing specific resume template */}
+                 <span className="text-gray-500">
+                    [Template Content for key: {data?.modelKey}]
+                 </span>
+              </div>
+            </div>
+          )}
+          
+          {/* CASE 3: COMING SOON / LOADING */}
+          {data?.isComingSoon && (
+             <div className="flex flex-col items-center justify-center py-10 gap-4">
+                <div className="bg-yellow-500 text-black px-4 py-1 rounded-full text-sm font-bold shadow-lg shadow-yellow-500/20">
+                  Coming Soon
+                </div>
+                <div className="h-32 w-full relative">
+                   <BubbleLoader />
+                </div>
+                <p>We are working hard to bring this feature to you!</p>
+             </div>
+          )}
+
+        </div>
+
+        {/* --- FOOTER --- */}
+        <div className="mt-6 flex justify-end gap-4 shrink-0 pt-4 border-t border-white/5">
           <button
             onClick={onClose}
-            className="py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl bg-tertiary hover:bg-white/10 transition-colors"
+            className="py-2 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl bg-tertiary hover:bg-white/10 transition-colors"
           >
             Close
           </button>
         </div>
-        {data?.isComingSoon && (
-          <>
-            <div className="absolute top-4 left-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
-              Coming Soon
-            </div>
-            <BubbleLoader />
-          </>
-        )}
+
       </motion.div>
     </div>
   );

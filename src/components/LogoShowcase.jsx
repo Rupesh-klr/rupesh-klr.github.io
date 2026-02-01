@@ -2,42 +2,42 @@ import React from "react";
 
 // --- Data ---
 const logoIconsList = [
-  { imgPath: "/images/logos/company-logo-1.png", name: "Logo 1" },
-  { imgPath: "/images/logos/company-logo-2.png", name: "Logo 2" },
-  { imgPath: "/images/logos/company-logo-3.png", name: "Logo 3" },
-  { imgPath: "/images/logos/company-logo-4.png", name: "Logo 4" },
-  { imgPath: "/images/logos/company-logo-5.png", name: "Logo 5" }, {
-    imgPath: "/images/logos/company-logo-1.png",
+  { imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-1.png", name: "Logo 1" },
+  { imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-2.png", name: "Logo 2" },
+  { imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-3.png", name: "Logo 3" },
+  { imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-4.png", name: "Logo 4" },
+  { imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-5.png", name: "Logo 5" }, {
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-1.png",
   },
   {
-    imgPath: "/images/logos/company-logo-2.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-2.png",
   },
   {
-    imgPath: "/images/logos/company-logo-3.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-3.png",
   },
   {
-    imgPath: "/images/logos/company-logo-4.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-4.png",
   },
   {
-    imgPath: "/images/logos/company-logo-5.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-5.png",
   },
   {
-    imgPath: "/images/logos/company-logo-6.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-6.png",
   },
   {
-    imgPath: "/images/logos/company-logo-7.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-7.png",
   },
   {
-    imgPath: "/images/logos/company-logo-8.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-8.png",
   },
   {
-    imgPath: "/images/logos/company-logo-9.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-9.png",
   },
   {
-    imgPath: "/images/logos/company-logo-10.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-10.png",
   },
   {
-    imgPath: "/images/logos/company-logo-11.png",
+    imgPath: import.meta.env.BASE_URL + "images/logos/company-logo-11.png",
   },
 ];
 

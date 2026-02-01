@@ -31,8 +31,10 @@ export const navLinks = [
     title: "About",
     type: "dropdown",
     children: [
-      { id: "resume", title: "Download Resume", path: "https://drive.google.com/file/d/10w5siTkXdl5RKIY5IynnwJpQmpP46tSq/view?usp=drive_link", external: true },
+      { id: "resume-ats", title: "Download Resume[ATS]", path: "https://drive.google.com/file/d/10w5siTkXdl5RKIY5IynnwJpQmpP46tSq/view?usp=drive_link", external: true },
       { id: "education", title: "Education", path: "#education" },
+      { id: "resume-ui", title: "Download Resume[UI]", path: "https://drive.google.com/file/d/10w5siTkXdl5RKIY5IynnwJpQmpP46tSq/view?usp=drive_link", external: true },
+      { id: "cover-page", title: "Download Cover Page", path: "https://drive.google.com/file/d/10w5siTkXdl5RKIY5IynnwJpQmpP46tSq/view?usp=drive_link", external: true },
       { id: "achievements", title: "Personal Achievements", path: "#achievements" },
       { id: "tech", title: "My Tech Stack", path: "#tech" },
       { id: "resume-all", title: "My Resume Collection", path: "#", modelItem: true, modelData: { "name": "Rupesh", "roles": "software engineer", isComingSoon: true }, modelType: "resume-sample-template", modelKey: "resume-sample-template" },
@@ -83,6 +85,12 @@ export const navLinks = [
     ],
   },
 ];
+export const aboutLoadLink = {
+  resume: "https://drive.google.com/file/d/10w5siTkXdl5RKIY5IynnwJpQmpP46tSq/view?usp=drive_link",
+  linkedin: "https://www.linkedin.com/in/rupeshb6/",
+  github: "https://github.com/Rupesh-klr",
+  leetcode: "https://leetcode.com/u/krishnaleena222/"
+}
 
 const services = [
   {
@@ -98,7 +106,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Devops Developer",
     icon: creator,
   },
 ];

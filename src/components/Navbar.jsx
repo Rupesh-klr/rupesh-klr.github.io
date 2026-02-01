@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
+import ThemeToggle from "./ThemeToggle";
 import { logo, menu, close } from "../assets";
 
 const Navbar = ({ onOpenModal }) => {
@@ -46,6 +47,7 @@ const Navbar = ({ onOpenModal }) => {
             <span className='sm:block hidden'> | Full Stack DevOps Engineer</span>
           </p>
         </Link>
+        <ThemeToggle />
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {/* Desktop Navigation */}

@@ -1,6 +1,6 @@
 
 import GlowCard from "./GlowCard";
-
+import.meta.env.BASE_URL;
 
 const testimonials = [
   {
@@ -11,8 +11,9 @@ const testimonials = [
     rating: 5.0,
     relationship: "Direct Manager",
     date: "2025-09-28",
-    // imgPath: "/images/jason_avatar.png",
-    imgPath: "/images/client1.png",
+    color: "#ff0080" ,// Pink/Red
+    // imgPath: import.meta.env.BASE_URL + "images/jason_avatar.png",
+    imgPath: import.meta.env.BASE_URL + "images/client1.png",
     review:
       "Rupesh is that rare engineer who combines technical skill with absolute dependability. He handled critical tasks that usually require extensive oversight with total autonomy. His reliability gave leadership great comfort, knowing jobs would be done right and fast. Losing him to the MESH team was a bittersweet moment—I genuinely wished I could clone him for both teams.",
     fullReview:
@@ -24,10 +25,12 @@ const testimonials = [
     designation: "Senior Technical Colleague",
     company: "SASI Team",
     rating: 5.0,
+    color: "#915eff",
     relationship: "Senior Peer",
     date: "2025-09-28",
-    // imgPath: "/images/krishna_avatar.png",
-    imgPath: "/images/client2.png",
+    // imgPath: import.meta.env.BASE_URL + "images/krishna_avatar.png",
+    imgPath: import.meta.env.BASE_URL + "images/client2.png",
+    
     review:
       "Having Rupesh on the team was a game-changer. He was instrumental during our complex Rancher migration and critical ASRI production fixes. He consistently tackled the toughest jobs with confidence, delivering robust solutions at impressive speeds. His technical eagerness and dedication make him the kind of developer no team ever wants to let go of.",
     fullReview:
@@ -39,10 +42,12 @@ const testimonials = [
     designation: "Technical Lead / Award Committee",
     company: "Omnivue & SASI",
     rating: 5.0,
+
+    color: "#00ffcc",
     relationship: "Cross-Functional Lead",
     date: "2024-01-01",
-    // imgPath: "/images/badge_icon.png",
-    imgPath: "/images/client3.png",
+    // imgPath: import.meta.env.BASE_URL + "images/badge_icon.png",
+    imgPath: import.meta.env.BASE_URL + "images/client3.png",
     review:
       "Rupesh demonstrated remarkable adaptability from Day 1. He played a crucial role in the successful Rancher migration for both Omnivue and SASI applications. Beyond his core duties, his ability to swiftly master new tech stacks allowed him to resolve critical DSP production issues. A well-deserved recognition for a true team player who elevates everyone around him.",
     fullReview:
@@ -54,10 +59,11 @@ const testimonials = [
     designation: "Project Delivery Lead",
     company: "Production Delivery Team",
     rating: 5.0,
+    color: "#ff0080", // Pink/Red
     relationship: "Project Lead",
     date: "2025-08-15",
-    // imgPath: "/images/roy_avatar.png",
-    imgPath: "/images/client4.png",
+    // imgPath: import.meta.env.BASE_URL + "images/roy_avatar.png",
+    imgPath: import.meta.env.BASE_URL + "images/client4.png",
     review:
       "Rupesh deserves special recognition for being the driving force behind our recent production delivery. He went far above and beyond expectations, putting in the extra effort required to ensure a seamless launch. His willingness to step up and assist other team members was the glue that held the project together during the final crunch. Exceptional dedication.",
     fullReview:
@@ -71,8 +77,9 @@ const testimonials = [
     rating: 5.0,
     relationship: "Technical Mentor",
     date: "2025-05-20",
-    // imgPath: "/images/lada_avatar.png",
-    imgPath: "/images/client5.png",
+    color: "#915eff",
+    // imgPath: import.meta.env.BASE_URL + "images/lada_avatar.png",
+    imgPath: import.meta.env.BASE_URL + "images/client5.png",
     review:
       "I must highlight Rupesh's critical contributions to the internal migrations of Omnivue and SASI. He flawlessly balanced complex migration tasks while simultaneously resolving high-priority production support issues. Regardless of the pressure or complexity, Rupesh met every single deadline with precision. His ability to maintain stability while driving change is impressive.",
     fullReview:
@@ -83,11 +90,13 @@ const testimonials = [
     name: "Dinesh & Saran",
     designation: "Team Lead & Manager",
     company: "Datazoic",
+    
     rating: 5.0,
     relationship: "Previous Management",
     date: "2023-12-10",
-    // imgPath: "/images/datazoic_team.png",
-    imgPath: "/images/client6.png",
+    color: "#00ffcc",
+    // imgPath: import.meta.env.BASE_URL + "images/datazoic_team.png",
+    imgPath: import.meta.env.BASE_URL + "images/client6.png",
     review:
       "Starting as an intern, Rupesh quickly evolved into a core contributor capable of handling high-volume workloads with precision. He has a natural knack for Root Cause Analysis (RCA) and modernized our stack by enriching it with Node.js and React. He juggles multiple moving parts without ever dropping the ball. An outstanding full-stack talent.",
     fullReview:
@@ -112,21 +121,37 @@ const TestimonialsDump = () => {
           </div>
         </div>
 
-        <div className="lg:columns-3 md:columns-2 columns-1 mt-16">
-          {testimonials.map((testimonial, index) => (
-            <GlowCard card={testimonial} key={index} index={index}>
-              <div className="flex items-center gap-3">
-                <div>
-                  <img src={testimonial.imgPath} alt="" />
-                </div>
-                <div>
-                  <p className="font-bold">{testimonial.name}</p>
-                  <p className="text-white-50">{testimonial.mentions}</p>
-                </div>
-              </div>
-            </GlowCard>
-          ))}
-        </div>
+        <div className="lg:columns-3 md:columns-2 columns-1 mt-16 gap-5 space-y-5">
+      {testimonials.map((testimonial, index) => (
+        <GlowCard 
+          key={index} 
+          glowColor={testimonial.color || "#804dee"} // Pass custom color here
+          className="p-10 mb-5 break-inside-avoid-column"
+        >
+          <div className="flex items-center gap-1 mb-5">
+            {/* Stars */}
+            {Array.from({ length: 5 }, (_, i) => (
+              <img key={i} src="/images/star.png" alt="star" className="w-5 h-5 opacity-80" />
+            ))}
+          </div>
+          
+          <div className="mb-5">
+            <p className="text-gray-300 text-lg leading-relaxed">{testimonial.review}</p>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-gray-700 overflow-hidden">
+               {/* Placeholder for user image */}
+               <img key={testimonial.id} src={testimonial.imgPath} alt="client" className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <p className="font-bold text-white">{testimonial.name}</p>
+              <p className="text-gray-500 text-sm">Verified User</p>
+            </div>
+          </div>
+        </GlowCard>
+      ))}
+    </div>
       </div>
     </section>
   );

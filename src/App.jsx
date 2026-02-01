@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, BubbleLoader, Acomplishments, TestimonialsDump, GlobalModal } from "./components";
+import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, BubbleLoader, Sidebar, Acomplishments, TestimonialsDump, GlobalModal, Footer, FloatingAssistant, GlassScrollbar, CyberCursor } from "./components";
 
 const App = () => {
   const [timerKey, setTimerKey] = useState(0);
@@ -45,6 +45,9 @@ const App = () => {
   }, []);
   return (
     <BrowserRouter>
+      <Sidebar />
+      <GlassScrollbar />
+      <CyberCursor />
     {/* 4. Render the Global Modal at the Root Level */}
       <GlobalModal 
         isOpen={modalState.isOpen}
@@ -52,6 +55,7 @@ const App = () => {
         type={modalState.modelType}
         data={modalState.modelData}
       />
+      <FloatingAssistant />
       <div className='relative z-0 bg-primary'>
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar onOpenModal={handleOpenModal} />
@@ -80,6 +84,7 @@ const App = () => {
             </div>
           )}
         </div>
+        <Footer onOpenModal={handleOpenModal} />
         {/* ----------------------- */}
       </div>
     </BrowserRouter>
