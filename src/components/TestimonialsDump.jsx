@@ -1,0 +1,135 @@
+
+import GlowCard from "./GlowCard";
+
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Jason",
+    designation: "Team Lead / Manager",
+    company: "SASI & MESH Team",
+    rating: 5.0,
+    relationship: "Direct Manager",
+    date: "2025-09-28",
+    // imgPath: "/images/jason_avatar.png",
+    imgPath: "/images/client1.png",
+    review:
+      "Rupesh is that rare engineer who combines technical skill with absolute dependability. He handled critical tasks that usually require extensive oversight with total autonomy. His reliability gave leadership great comfort, knowing jobs would be done right and fast. Losing him to the MESH team was a bittersweet moment—I genuinely wished I could clone him for both teams.",
+    fullReview:
+      "You have been wonderful to work with since I joined the team. While you did not get many of the Blue Planet stories, the work you did perform was extremely important. Those tasks were largely tasks that would need extra teaching for most other team members to pick up. Your dependability gave both Krishna and I great comfort to know the job would be done right and quickly. I found myself wanting you in both places (SASI and MESH). I would love for you to be here forever.",
+  },
+  {
+    id: 2,
+    name: "Krishna",
+    designation: "Senior Technical Colleague",
+    company: "SASI Team",
+    rating: 5.0,
+    relationship: "Senior Peer",
+    date: "2025-09-28",
+    // imgPath: "/images/krishna_avatar.png",
+    imgPath: "/images/client2.png",
+    review:
+      "Having Rupesh on the team was a game-changer. He was instrumental during our complex Rancher migration and critical ASRI production fixes. He consistently tackled the toughest jobs with confidence, delivering robust solutions at impressive speeds. His technical eagerness and dedication make him the kind of developer no team ever wants to let go of.",
+    fullReview:
+      "It’s truly wonderful to have you in our team. I really appreciate all the support you’ve given, especially in handling the rancher migration, resolving ASRI issues, and providing production support. You’ve taken on tough jobs, picked up challenges with confidence, and delivered solutions quickly. Your hard work and dedication make a big difference, and honestly, I don’t think anyone who has you in their team would ever want to let you go.",
+  },
+  {
+    id: 3,
+    name: "Sunitha Rani Sriramulu",
+    designation: "Technical Lead / Award Committee",
+    company: "Omnivue & SASI",
+    rating: 5.0,
+    relationship: "Cross-Functional Lead",
+    date: "2024-01-01",
+    // imgPath: "/images/badge_icon.png",
+    imgPath: "/images/client3.png",
+    review:
+      "Rupesh demonstrated remarkable adaptability from Day 1. He played a crucial role in the successful Rancher migration for both Omnivue and SASI applications. Beyond his core duties, his ability to swiftly master new tech stacks allowed him to resolve critical DSP production issues. A well-deserved recognition for a true team player who elevates everyone around him.",
+    fullReview:
+      "As a fresh joinee, Rupesh demonstrated remarkable adaptability and strong eagerness to learn, quickly gaining proficiency in multiple applications. He played a crucial role in the successful Rancher migration of both Omnivue and SASI. Additionally, Rupesh provided invaluable support to Sweety in resolving DSP production issues with Inflight orders post-migration. Well Done Rupesh!",
+  },
+  {
+    id: 4,
+    name: "Roy",
+    designation: "Project Delivery Lead",
+    company: "Production Delivery Team",
+    rating: 5.0,
+    relationship: "Project Lead",
+    date: "2025-08-15",
+    // imgPath: "/images/roy_avatar.png",
+    imgPath: "/images/client4.png",
+    review:
+      "Rupesh deserves special recognition for being the driving force behind our recent production delivery. He went far above and beyond expectations, putting in the extra effort required to ensure a seamless launch. His willingness to step up and assist other team members was the glue that held the project together during the final crunch. Exceptional dedication.",
+    fullReview:
+      "Rupesh deserves special recognition for his exceptional efforts in driving our recent project to production. He went above and beyond, putting in significantly more effort than expected to ensure a seamless delivery. Beyond his own tasks, his willingness to step up and assist other team members was crucial to our success. His dedication really held the team together during the final crunch.",
+  },
+  {
+    id: 5,
+    name: "Lada Pradhan",
+    designation: "Senior Technical Lead",
+    company: "Omnivue & SASI Support",
+    rating: 5.0,
+    relationship: "Technical Mentor",
+    date: "2025-05-20",
+    // imgPath: "/images/lada_avatar.png",
+    imgPath: "/images/client5.png",
+    review:
+      "I must highlight Rupesh's critical contributions to the internal migrations of Omnivue and SASI. He flawlessly balanced complex migration tasks while simultaneously resolving high-priority production support issues. Regardless of the pressure or complexity, Rupesh met every single deadline with precision. His ability to maintain stability while driving change is impressive.",
+    fullReview:
+      "I want to highlight Rupesh's critical contributions to the Omnivue and SASI internal migrations. He stepped in to support the DSP application and resolved SASI production support issues with remarkable speed. Regardless of the pressure, Rupesh consistently met every single deadline. His ability to juggle complex migration tasks while maintaining stability in production was impressive.",
+  },
+  {
+    id: 6,
+    name: "Dinesh & Saran",
+    designation: "Team Lead & Manager",
+    company: "Datazoic",
+    rating: 5.0,
+    relationship: "Previous Management",
+    date: "2023-12-10",
+    // imgPath: "/images/datazoic_team.png",
+    imgPath: "/images/client6.png",
+    review:
+      "Starting as an intern, Rupesh quickly evolved into a core contributor capable of handling high-volume workloads with precision. He has a natural knack for Root Cause Analysis (RCA) and modernized our stack by enriching it with Node.js and React. He juggles multiple moving parts without ever dropping the ball. An outstanding full-stack talent.",
+    fullReview:
+      "Starting as an intern, Rupesh quickly proved his capability to handle high volumes of open items with precision. He has a knack for finding root causes across all dimensions and taking quick, effective action. His work enriching our stack with Node.js and React has been invaluable. He manages to juggle many moving parts without dropping the ball. Keep doing the same good job, Rupesh!",
+  },
+];
+
+// export { testimonialsKll };
+const TestimonialsDump = () => {
+  return (
+    <section id="testimonials" className="flex-center section-padding relative z-0">
+      <div className="w-full h-full md:px-10 px-5">
+
+        <div className="flex flex-col items-center gap-5">
+          <div className="hero-badge">
+            <p>"⭐️ Endorsements from Leadership"</p>
+          </div>
+          <div>
+            <h1 className="font-semibold md:text-5xl text-3xl text-center">
+              "What People Say About Me?"
+            </h1>
+          </div>
+        </div>
+
+        <div className="lg:columns-3 md:columns-2 columns-1 mt-16">
+          {testimonials.map((testimonial, index) => (
+            <GlowCard card={testimonial} key={index} index={index}>
+              <div className="flex items-center gap-3">
+                <div>
+                  <img src={testimonial.imgPath} alt="" />
+                </div>
+                <div>
+                  <p className="font-bold">{testimonial.name}</p>
+                  <p className="text-white-50">{testimonial.mentions}</p>
+                </div>
+              </div>
+            </GlowCard>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialsDump;
