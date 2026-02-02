@@ -23,6 +23,10 @@ import {
   jobit,
   tripguide,
   threejs,
+
+  datazoic,
+  lumen,
+  freelancer,
 } from "../assets";
 
 export const navLinks = [
@@ -168,59 +172,59 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Software Developer & DevOps Engineer",
+    company_name: "Lumen Technologies",
+    icon: lumen, 
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Nov 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Spearheaded the critical migration of legacy Virtual Machines (VMs) to Rancher-managed Kubernetes clusters, achieving 100% deliverable success rate ahead of strict deadlines. ",
+      "Engineered high-performance CI/CD pipelines using Jenkins and Docker, integrating JMeter for automated load testing to ensure system stability under peak loads.",
+      "Led the modernization of the tech stack by migrating legacy Angular.js frontends to React and refactoring monolithic backends into Node.js and Spring Boot microservices.",
+      "Implemented automated monitoring and logging using Splunk and Prometheus, reducing incident response time by 40%.",
+      "Managed the end-to-end deployment lifecycle, ensuring zero-downtime releases and maintaining strict 99.9% SLA compliance."
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "Software Engineer (Promoted)",
+    company_name: "Datazoic",
+    icon: datazoic || lumen, 
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "June 2023 - Nov 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Continued as a core developer following a successful internship, taking ownership of the 'DataFlow' analytics module built with React and Redux.",
+      "Optimized database queries and API response times for the 'ClientConnect' portal, handling 10,000+ daily requests with improved latency.",
+      "Collaborated with the product team to implement role-based access control (RBAC), securing sensitive financial data across the application.",
+      "Mentored incoming interns on React best practices and codebase architecture, fostering a collaborative team environment."
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
+    title: "Software Engineer Intern",
+    company_name: "Datazoic",
+    icon: datazoic || lumen, 
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "Feb 15, 2023 - June 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed and deployed 'AssetTrack', a React-based inventory management application, reducing manual tracking errors by 25%.",
+      "Assisted in the deployment of the 'SmartHR' employee dashboard, configuring Nginx servers and setting up SSL certificates for secure access.",
+      "Fixed critical UI bugs in the 'AlphaStream' reporting tool, ensuring cross-browser compatibility across Chrome and Safari.",
+      "Gained hands-on experience with Agile methodologies, participating in daily stand-ups and sprint planning to deliver features on time.",
+    ],
+  },
+  {
+    title: "Freelance & Academic Developer",
+    company_name: "Self-Initiated",
+    icon: freelancer, 
+    iconBg: "#383E56",
+    date: "2019 - 2022",
+    points: [
+      "Developed 'Movie Mahal', a comprehensive movie discovery platform using React and TMDB API with dynamic search capabilities.",
+      "Built a secure Biometric Voting System prototype using Java and MySQL, focusing on data encryption and user authentication.",
+      "Created an AI Music Recommendation Engine using Python and collaborative filtering algorithms to suggest personalized tracks.",
+      "Managed full-stack projects from concept to deployment, utilizing Vercel for frontend hosting and Heroku for backend services."
     ],
   },
 ];
-
 const testimonials = [
   {
     testimonial:
@@ -248,7 +252,87 @@ const testimonials = [
   },
 ];
 
+const dummyUser = "https://randomuser.me/api/portraits/men/1.jpg";
+
 const projects = [
+  {
+    name: "Distributed Banking Core",
+    short_desc: "High-performance microservices system mimicking core banking operations.",
+    period: 'April 2025 - May 2025',
+    bullets: [
+      'Constructed an AI chatbot using MERN stack and Gemini API for dynamic conversation flow. ',
+      'Responsive UI in React with real-time Socket.io communication.',
+      'Backend with Node.js, Express, and MongoDB for scalable session tracking.',
+      'Gemini API for natural interactions with contextual memory.',
+    ],
+    description:
+      "A high-performance microservices system mimicking core banking operations. Engineered a fault-tolerant architecture using Spring Boot and Kafka to process high-volume financial transactions with 99.9% uptime and eventual consistency. Implemented banking-grade security with OAuth2 and JWT.",
+    tags: [
+      { name: "spring-boot", color: "blue-text-gradient" },
+      { name: "kafka", color: "orange-text-gradient" },
+      { name: "microservices", color: "green-text-gradient" },
+    ],
+    image: carrent,
+    source_code_link: "https://github.com/Rupesh-klr/",
+    live_url: "",
+    // --- NEW DETAILED DATA ---
+    my_role: "Lead Backend Architect",
+    contribution: "Designed the Kafka event streaming pipeline and implemented the OAuth2 security gateway.",
+    guide: { name: "Prof. S. Kumar", designation: "HOD Computer Science" },
+    publication: { title: "Scalable Microservices in FinTech", link: "#" },
+    period: 'April 2025 - May 2025',
+    bullets: [
+      'Constructed an AI chatbot using MERN stack and Gemini API for dynamic conversation flow. ',
+      'Responsive UI in React with real-time Socket.io communication.',
+      'Backend with Node.js, Express, and MongoDB for scalable session tracking.',
+      'Gemini API for natural interactions with contextual memory.',
+    ],
+    team: [
+      { name: "Rupesh", role: "Backend", image: dummyUser, social: "https://linkedin.com" },
+      { name: "Alex", role: "DevOps", image: dummyUser, social: "https://linkedin.com" },
+    ]
+  },
+  {
+    name: "Telecom Network Optimizer",
+    short_desc: "Algorithmic tool optimizing signal latency by 40% using Graph Theory.",
+    description:
+      "An advanced algorithmic tool for dynamic network routing. Developed a high-efficiency routing algorithm to calculate the shortest path between dynamic network nodes, optimizing signal latency by 40% using Graph Theory. Built a visualization tool to simulate real-time signal geometry.",
+    tags: [
+      { name: "java", color: "blue-text-gradient" },
+      { name: "graph-theory", color: "pink-text-gradient" },
+      { name: "react", color: "blue-text-gradient" },
+    ],
+    image: jobit,
+    source_code_link: "https://github.com/Rupesh-klr/",
+    live_url: "",
+    my_role: "Algorithm Specialist",
+    contribution: "Implemented Dijkstra's modified algorithm for dynamic node weighting.",
+    guide: { name: "Dr. A. Patel", designation: "Senior Lecturer" },
+    team: [
+      { name: "Rupesh", role: "Algo", image: dummyUser, social: "#" },
+    ]
+  },
+  {
+    name: "Solar & EdTech SaaS",
+    short_desc: "Unified multi-tenant platform handling dual business domains.",
+    description:
+      "A unified multi-tenant platform handling dual business domains. Architected a comprehensive SaaS platform featuring Role-Based Access Control (RBAC) and Google OAuth to securely manage distinct user personas. Designed a dual-domain database schema.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "nodejs", color: "green-text-gradient" },
+      { name: "mongodb", color: "orange-text-gradient" },
+    ],
+    image: tripguide,
+    source_code_link: "https://github.com/Rupesh-klr/",
+    live_url: "",
+    my_role: "Full Stack Developer",
+    contribution: "Built the RBAC system and integrated Google OAuth.",
+    team: [
+      { name: "Rupesh", role: "Full Stack", image: dummyUser, social: "#" },
+      { name: "Sarah", role: "Frontend", image: dummyUser, social: "#" },
+      { name: "Mike", role: "Database", image: dummyUser, social: "#" },
+    ]
+  },
   {
     name: "Car Rent",
     description:

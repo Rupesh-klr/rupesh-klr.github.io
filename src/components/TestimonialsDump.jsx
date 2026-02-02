@@ -1,6 +1,7 @@
 
 import GlowCard from "./GlowCard";
 import.meta.env.BASE_URL;
+import GlassRating from "./GlassRating";
 
 const testimonials = [
   {
@@ -41,7 +42,7 @@ const testimonials = [
     name: "Sunitha Rani Sriramulu",
     designation: "Technical Lead / Award Committee",
     company: "Omnivue & SASI",
-    rating: 5.0,
+    rating: 3.9,
 
     color: "#00ffcc",
     relationship: "Cross-Functional Lead",
@@ -74,7 +75,7 @@ const testimonials = [
     name: "Lada Pradhan",
     designation: "Senior Technical Lead",
     company: "Omnivue & SASI Support",
-    rating: 5.0,
+    rating: 4.0,
     relationship: "Technical Mentor",
     date: "2025-05-20",
     color: "#915eff",
@@ -91,7 +92,7 @@ const testimonials = [
     designation: "Team Lead & Manager",
     company: "Datazoic",
     
-    rating: 5.0,
+    rating: 4.7,
     relationship: "Previous Management",
     date: "2023-12-10",
     color: "#00ffcc",
@@ -107,8 +108,8 @@ const testimonials = [
 // export { testimonialsKll };
 const TestimonialsDump = () => {
   return (
-    <section id="testimonials" className="flex-center section-padding relative z-0">
-      <div className="w-full h-full md:px-10 px-5">
+    <section id="testimonials" className="flex-center sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0 ">
+      <div className=" h-full md:px-10 px-5">
 
         <div className="flex flex-col items-center gap-5">
           <div className="hero-badge">
@@ -128,13 +129,13 @@ const TestimonialsDump = () => {
           glowColor={testimonial.color || "#804dee"} // Pass custom color here
           className="p-10 mb-5 break-inside-avoid-column"
         >
-          <div className="flex items-center gap-1 mb-5">
-            {/* Stars */}
+          {/* <div className="flex items-center gap-1 mb-5">
             {Array.from({ length: 5 }, (_, i) => (
-              <img key={i} src="/images/star.png" alt="star" className="w-5 h-5 opacity-80" />
+              <img key={i} src={import.meta.env.BASE_URL + "images/star.png"} alt="star" className="w-5 h-5 opacity-80" />
             ))}
-          </div>
-          
+          </div> */}
+          {/* ✅ REPLACED THE OLD STAR LOOP WITH THIS */}
+          <GlassRating rating={testimonial.rating} />
           <div className="mb-5">
             <p className="text-gray-300 text-lg leading-relaxed">{testimonial.review}</p>
           </div>

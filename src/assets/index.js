@@ -25,6 +25,9 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import lumen from "./company/Lumen-logo.png";
+import datazoic from "./company/datazoic-1to1.png";
+import freelancer from "./company/freelancer.jpeg";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -59,4 +62,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  datazoic,
+  lumen,
+  freelancer,
 };

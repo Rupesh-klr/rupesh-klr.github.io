@@ -1,4 +1,4 @@
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas';
+import { EarthCanvas, ComputersCanvas, StarsCanvas } from './canvas';
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -19,6 +19,7 @@ import Footer from './Footer';
 import FloatingAssistant from './FloatingAssistant';
 import GlassScrollbar from './GlassScrollbar';
 import CyberCursor from './CyberCursor';
+import Education from './Education';
 
 
 export {
@@ -32,7 +33,6 @@ export {
   Contact,
   CanvasLoader,
   EarthCanvas, 
-  BallCanvas, 
   ComputersCanvas, 
   StarsCanvas,
   BubbleLoader,
@@ -45,5 +45,6 @@ export {
   Footer,
   FloatingAssistant,
   GlassScrollbar,
-  CyberCursor
+  CyberCursor,
+  Education
 };

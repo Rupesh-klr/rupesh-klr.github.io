@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, BubbleLoader, Sidebar, Acomplishments, TestimonialsDump, GlobalModal, Footer, FloatingAssistant, GlassScrollbar, CyberCursor } from "./components";
+import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, BubbleLoader, Sidebar, Acomplishments, TestimonialsDump, GlobalModal, Footer, FloatingAssistant, GlassScrollbar, CyberCursor, Education } from "./components";
 
 const App = () => {
   const [timerKey, setTimerKey] = useState(0);
@@ -65,6 +65,7 @@ const App = () => {
         <Experience />
         <Tech />
         <Works />
+        <Education />
         <Acomplishments />
         <TestimonialsDump />
         {/* 4. Add the 'key' here. When 'timerKey' changes, this div and children are reborn. */}

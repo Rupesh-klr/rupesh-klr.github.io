@@ -33,6 +33,10 @@ jobs:
       - name: Build project
         env:
           isLiveInGitHUB: true
+          VITE_APP_EMAILJS_SERVICE_ID: service_v1t534c
+          VITE_APP_EMAILJS_TEMPLATE_ID: template_6ige124
+          VITE_APP_EMAILJS_PUBLIC_KEY: V3Y_MKWFWmMy-rl-t
+          VITE_APP_FORMSUBMIT_EMAIL: 2a313db94573b7cd891ec3d5480e0e0a
         run: npm run build
 
       - name: Upload artifact
