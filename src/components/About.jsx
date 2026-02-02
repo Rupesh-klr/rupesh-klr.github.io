@@ -130,6 +130,9 @@ const About = () => {
         variants={fadeIn("up", "", 0.5, 1)}
         className='flex justify-center items-center mt-12 gap-6 flex-wrap'
       >
+        <span className='hash-span' id="resume">
+          &nbsp;
+        </span>
         <a href={aboutLoadLink.resume} target='_blank' aria-label='resume' className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:scale-105 transition-transform text-white px-8 py-4 rounded-full shadow-lg shadow-purple-500/30 flex items-center gap-2 font-bold text-lg">
           Resume <CloudArrowDownIcon className='size-6' />
         </a>

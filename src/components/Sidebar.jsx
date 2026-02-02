@@ -18,15 +18,16 @@ const Sidebar = () => {
   const timeoutRef = useRef(null);
 
   const navItems = [
-    { id: "hero", label: "Home", icon: <FaHome /> },
+    { id: "home", label: "Home", icon: <FaHome /> },
     { id: "about", label: "About", icon: <FaUser /> },
-    { id: "tech", label: "Skills", icon: <FaCode /> },
-    { id: "projects", label: "Work", icon: <FaBriefcase /> },
+    { id: "skills", label: "Skills", icon: <FaCode /> },
+    { id: "work", label: "Work", icon: <FaBriefcase /> },
     { id: "resume", label: "Resume", icon: <FaFileAlt /> },
     { id: "contact", label: "Contact", icon: <FaEnvelope /> },
   ];
 
   const scrollToSection = (id) => {
+    console.log("Scrolling to:", id);
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };

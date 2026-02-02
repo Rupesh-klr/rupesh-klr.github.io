@@ -23,7 +23,9 @@ import {
   jobit,
   tripguide,
   threejs,
-
+  bankCorepr,
+  multiTentive,
+  telecomPro,
   datazoic,
   lumen,
   freelancer,
@@ -87,6 +89,14 @@ export const navLinks = [
       { id: "socials", title: "Social Media", path: "#socials" },
       { id: "connect-hub", title: "Connection Hub", path: "#socials" },
     ],
+  },
+  { 
+    id: "my-details-all", 
+    title: "Connect+", 
+    path: "#", 
+    modelItem: true, 
+    modelType: "my-details-compunetent", // Matches logic below
+    modelKey: "my-details-compunetent" 
   },
 ];
 export const aboutLoadLink = {
@@ -397,6 +407,30 @@ const projects = [
     source_code_link: "https://github.com/",
   },
 ];
+export const aboutData = {
+  name: "B. Rupesh",
+  email: "krishnaleena222@gmail.com",
+  phone: "+91-7075608796", // Fixed typo from &07 to 707
+  homepage: "https://rupesh-klr.github.io/", // ✅ Your Homepage
+  socialLinks: {
+    github: {
+      url: "https://github.com/Rupesh-klr/",
+      title: "GitHub",
+    },
+    linkedin: {
+      url: "https://www.linkedin.com/in/rupeshb6/",
+      title: "LinkedIn",
+    },
+    upwork: {
+      url: "https://www.upwork.com/freelancers/~01ddf5e4e0e5cbcec1",
+      title: "Upwork",
+    },
+    portfolio: {
+      url: "https://rupesh-klr.github.io/",
+      title: "Portfolio",
+    }
+  },
+};
 export const portfolioMetadata = {
   title: "Rupesh | Full Stack Developer & DevOps Engineer",
   description:

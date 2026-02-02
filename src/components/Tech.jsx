@@ -105,7 +105,10 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
+          <span className='hash-span' id="skills">
+          &nbsp;
+        </span>
+          <h2 className="text-3xl sm:text-4xl text-white font-semibold tracking-tight bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
             Technical Skills
           </h2>
         </motion.div>

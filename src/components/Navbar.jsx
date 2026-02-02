@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import MyDetailsComponent from "./MyDetailsComponent";
 
 import { styles } from "../styles";
-import { navLinks } from "../constants";
+import { navLinks,aboutData } from "../constants";
 import ThemeToggle from "./ThemeToggle";
 import { logo, menu, close } from "../assets";
 
@@ -10,6 +11,14 @@ const Navbar = ({ onOpenModal }) => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeModal, setActiveModal] = useState(null); // 'my-details-compunetent' or null
+  const handleNavClick = (nav) => {
+    if (nav.modelItem) {
+      setActiveModal(nav.modelType);
+    } else {
+      // Handle standard scrolling...
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +36,7 @@ const Navbar = ({ onOpenModal }) => {
   }, []);
 
   return (
+    <>
     <nav
       className={`${styles.paddingX
         } w-full flex items-center py-5 fixed top-0 z-20 ${scrolled ? "bg-primary" : "bg-transparent"
@@ -174,6 +184,31 @@ const Navbar = ({ onOpenModal }) => {
         </div>
       </div>
     </nav>
+    {/* --- MODAL OVERLAY --- */}
+      {activeModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <div className="relative w-full max-w-4xl">
+            
+            {/* Close Button */}
+            <button 
+              onClick={() => setActiveModal(null)}
+              className="absolute -top-12 right-0 text-white text-xl font-bold bg-white/10 px-4 py-2 rounded-full hover:bg-white/20 transition-all"
+            >
+              ✕ Close
+            </button>
+
+            {/* --- CONDITIONAL RENDERING --- */}
+            {activeModal === "my-details-compunetent" && (
+              <MyDetailsComponent data={aboutData} />
+            )}
+
+            {/* You can add other modal types here (e.g., legal) */}
+            {/* {activeModal === "legal" && <LegalComponent />} */}
+            
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
