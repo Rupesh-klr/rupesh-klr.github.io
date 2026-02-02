@@ -32,6 +32,9 @@ import freelancer from "./company/freelancer.jpeg";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import telecomPro from "./telecomPro.png";
+import multiTentive from "./multiTentive.png";
+import bankCorepr from "./bankCorepr.png";
 
 export {
   logo,
@@ -65,4 +68,7 @@ export {
   datazoic,
   lumen,
   freelancer,
+  bankCorepr,
+  multiTentive,
+  telecomPro
 };

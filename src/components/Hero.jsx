@@ -19,32 +19,32 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className='text-[#915EFF]'>
               <TypeAnimation
-                        sequence={[
-                          `Rupesh.            `,
-                          2000,
-                          'Fullstack Developer',
-                          1000,
-                          `Devops Engineer.    `,
-                          1000,
-                        ]}
-                        wrapper='span'
-                        speed={40}
-                        repeat={Infinity}
-                      />
+                sequence={[
+                  `Rupesh.            `,
+                  2000,
+                  'Fullstack Developer',
+                  1000,
+                  `Devops Engineer.    `,
+                  1000,
+                ]}
+                wrapper='span'
+                speed={40}
+                repeat={Infinity}
+              />
             </span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Full Stack Developer and DevOps<br className='sm:block hidden' />
-            enthusiast with 2.4+ years of <br className='sm:block hidden' />
-            experience building secure, scalable <br className='sm:block hidden' />
-            applications using Java and React.
+            Full Stack Developer and DevOps <br className='sm:block hidden' />
+            enthusiast with 2.4+ years of experience <br className='sm:block hidden' />
+            building secure, scalable applications <br className='sm:block hidden' />
+            using Java and React.
           </p>
         </div>
       </div>
 
       <ComputersCanvas />
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center mt-5'>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div

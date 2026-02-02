@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 
 import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, BubbleLoader, Sidebar, Acomplishments, TestimonialsDump, GlobalModal, Footer, FloatingAssistant, GlassScrollbar, CyberCursor, Education } from "./components";
 
+import {portfolioMetadata, dangerouslySetInnerHTMLForPageIndexPage} from "./constants";
+
+export const metadata = portfolioMetadata;
 const App = () => {
   const [timerKey, setTimerKey] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -87,7 +90,18 @@ const App = () => {
         </div>
         <Footer onOpenModal={handleOpenModal} />
         {/* ----------------------- */}
+        {/* Render any head-associated lazy JSON-LD objects (centralized list) */}
+      {dangerouslySetInnerHTMLForPageIndexPage.map((obj, i) => (
+        <script
+          key={`ld-head-${i}`}
+          // id={`ld-head-${i}`}
+          type="application/ld+json"
+          // strategy="lazyOnload"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
+        />
+      ))}
       </div>
+
     </BrowserRouter>
   );
 }

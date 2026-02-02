@@ -272,7 +272,7 @@ const projects = [
       { name: "kafka", color: "orange-text-gradient" },
       { name: "microservices", color: "green-text-gradient" },
     ],
-    image: carrent,
+    image: bankCorepr,
     source_code_link: "https://github.com/Rupesh-klr/",
     live_url: "",
     // --- NEW DETAILED DATA ---
@@ -302,7 +302,7 @@ const projects = [
       { name: "graph-theory", color: "pink-text-gradient" },
       { name: "react", color: "blue-text-gradient" },
     ],
-    image: jobit,
+    image: telecomPro,
     source_code_link: "https://github.com/Rupesh-klr/",
     live_url: "",
     my_role: "Algorithm Specialist",
@@ -322,7 +322,7 @@ const projects = [
       { name: "nodejs", color: "green-text-gradient" },
       { name: "mongodb", color: "orange-text-gradient" },
     ],
-    image: tripguide,
+    image: multiTentive,
     source_code_link: "https://github.com/Rupesh-klr/",
     live_url: "",
     my_role: "Full Stack Developer",
@@ -397,5 +397,176 @@ const projects = [
     source_code_link: "https://github.com/",
   },
 ];
+export const portfolioMetadata = {
+  title: "Rupesh | Full Stack Developer & DevOps Engineer",
+  description:
+    "Explore the portfolio of Rupesh, a Full Stack Developer and DevOps specialist. Expert in building secure, scalable microservices and web applications using the MERN stack, Java Spring Boot, Kubernetes, and Docker.",
+  keywords: [
+    "Rupesh Portfolio",
+    "Full Stack Developer",
+    "DevOps Engineer",
+    "MERN Stack Developer",
+    "Java Spring Boot",
+    "React Developer",
+    "Software Engineer India",
+    "Cloud Architecture",
+    "Kubernetes Specialist",
+    "Web Development",
+  ],
+  alternates: {
+    // Replace with your actual deployed domain (e.g., https://rupesh.dev)
+    canonical: "https://rupesh-klr.github.io//", 
+  },
+  icons: {
+    icon: "/logo.svg",           // Standard favicon
+    shortcut: "/logo.png",       // Fallback for older browsers
+    apple: "/logo.png",          // For Apple devices
+  },
+  openGraph: {
+    title: "Rupesh | Architecting Scalable Web Solutions",
+    description:
+      "Rupesh is a Full Stack Developer with expertise in modern web technologies and DevOps pipelines. Discover projects involving Microservices, AI integration, and Enterprise scale systems.",
+    url: "https://rupesh-klr.github.io//",
+    siteName: "Rupesh Portfolio",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://rupesh-klr.github.io//logo.png", // Ideally, use a 1200x630px banner here
+        width: 1200,
+        height: 630,
+        alt: "Rupesh - Full Stack Developer Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rupesh | Full Stack & DevOps Innovator",
+    description:
+      "Check out Rupesh's developer portfolio featuring high-performance web apps, cloud-native deployments, and advanced software engineering projects.",
+    // Twitter works best with PNG/JPG. SVG is not supported for cards.
+    images: ["https://rupesh-klr.github.io//logo.png"], 
+    creator: "@Rupesh_klr", // Replace with your actual Twitter handle if you have one
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+const isoDate = new Date().toISOString(); 
+const publishedDate = "2026-01-08T08:00:00+00:00"; // Fixed start date (approx launch)
+export const dangerouslySetInnerHTMLForPageIndexPage = [
+  // --- 1. PERSONAL ENTITY (Who you are) ---
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://rupesh-klr.github.io/#person",
+    name: "Rupesh",
+    url: "https://rupesh-klr.github.io/",
+    jobTitle: "Full Stack Developer & DevOps Engineer",
+    image: "https://rupesh-klr.github.io/logo.png",
+    sameAs: [
+      "https://github.com/Rupesh-klr",
+      "https://linkedin.com/in/your-linkedin-id", // Replace with actual ID
+      "https://twitter.com/your-handle"           // Replace with actual handle
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "Lumen Technologies"
+    },
+    knowsAbout: [
+      "Full Stack Development",
+      "DevOps",
+      "React.js",
+      "Java Spring Boot",
+      "Kubernetes",
+      "Docker"
+    ]
+  },
 
+  // --- 2. WEBPAGE METADATA (The Page itself) ---
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://rupesh-klr.github.io/#webpage",
+    url: "https://rupesh-klr.github.io/",
+    name: "Rupesh | Full Stack Developer & DevOps Portfolio",
+    description: "Professional portfolio of Rupesh, showcasing expertise in scalable web applications, microservices architecture, and DevOps automation.",
+    inLanguage: "en",
+    
+    // DATES (Dynamic & Fixed)
+    datePublished: publishedDate, 
+    dateModified: isoDate, // Updates every time the build runs
+    
+    // RELATIONS
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://rupesh-klr.github.io/"
+    },
+    // You are both the author and publisher of your own portfolio
+    author: {
+      "@id": "https://rupesh-klr.github.io/#person"
+    },
+    publisher: {
+      "@id": "https://rupesh-klr.github.io/#person"
+    },
+    mainEntity: {
+      "@id": "https://rupesh-klr.github.io/#person"
+    }
+  },
+
+  // --- 3. OFFERS / SERVICES (What you provide) ---
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://rupesh-klr.github.io/#services",
+    name: "Rupesh Technical Services",
+    url: "https://rupesh-klr.github.io/",
+    image: "https://rupesh-klr.github.io/logo.png",
+    priceRange: "$$",
+    description: "Freelance development and consulting services for web architecture and cloud deployment.",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "IN", // India based on your profile
+      addressLocality: "Hyderabad" // Based on your location info
+    },
+    areaServed: "Worldwide",
+    
+    // YOUR SERVICE OFFERS
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Development Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Full Stack Web Application Development (MERN/Java)"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "DevOps Pipeline Setup & Cloud Migration"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Legacy System Modernization (Migration to React/Microservices)"
+          }
+        }
+      ]
+    }
+  }
+];
 export { services, technologies, experiences, testimonials, projects };

@@ -123,10 +123,12 @@ const SpotlightCard = ({ index, edu }) => {
   );
 };
 
-// --- 3. MAIN SECTION ---
 const Education = () => {
   return (
-    <div className="">
+    // ✅ FIX: Changed 'md:pl-24' to 'md:pl-32' (more space) and added 'relative'
+    // This ensures the text starts 128px from the left on desktop, clearing the sidebar
+    <div className="w-full flex flex-col relative md:pl-32"> 
+      
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText}`}>My Academic Journey</p>
         <h2 className={`${styles.sectionHeadText}`}>Education.</h2>
@@ -140,6 +142,8 @@ const Education = () => {
     </div>
   );
 };
+
+// export default SectionWrapper(Education, "education");
 
 // Helper for simple text animation (if you don't have utils/motion)
 const textVariant = (delay) => {
