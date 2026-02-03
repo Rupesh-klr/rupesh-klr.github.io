@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Tilt } from "react-tilt";
 import { motion, AnimatePresence } from "framer-motion";
 
+import ReactDOM from "react-dom";
 import { styles } from "../styles";
 import { github } from "../assets"; 
 import { SectionWrapper } from "../hoc";
@@ -73,20 +74,27 @@ const CodeIcon = () => (
 const ProjectDetailsModal = ({ project, onClose }) => {
   if (!project) return null;
 
-  return (
+  return ReactDOM.createPortal(
+    // 1. BACKDROP (Outer Wrapper)
+    // REMOVED: 'mobile-modal-fix' from here (It must be full screen)
+    // UPDATED: z-50 -> z-[200] (To sit on top of everything else)
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-sm"
+      className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-sm"
       onClick={onClose}
     >
+      
+      {/* 2. MODAL CARD (Inner Wrapper) */}
+      {/* ADDED: 'mobile-modal-fix' HERE */}
       <motion.div
         initial={{ y: 50, opacity: 0, scale: 0.95 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: 50, opacity: 0, scale: 0.95 }}
         transition={{ duration: 0.4, type: "spring", stiffness: 100 }}
-        className="bg-[#151030] border border-white/10 w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-[0_0_50px_rgba(145,94,255,0.3)] relative custom-scrollbar flex flex-col md:flex-row overflow-hidden"
+        className="bg-[#151030] border border-white/10 w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-[0_0_50px_rgba(145,94,255,0.3)] relative custom-scrollbar flex flex-col md:flex-row overflow-hidden
+                   mobile-modal-fix" 
         onClick={(e) => e.stopPropagation()}
       >
         {/* LEFT SIDE: Image */}
@@ -177,7 +185,8 @@ const ProjectDetailsModal = ({ project, onClose }) => {
           </div>
         </div>
       </motion.div>
-    </motion.div>
+    </motion.div>,
+    document.body
   );
 };
 
