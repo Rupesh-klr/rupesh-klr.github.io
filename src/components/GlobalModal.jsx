@@ -12,49 +12,42 @@ const GlobalModal = ({ isOpen, onClose, type, data }) => {
   };
 
   return (
-    // Backdrop - Flexbox centering handles the positioning for the smaller sizes
+    // 1. BACKDROP: z-[200] ensures the whole overlay is on top
     <div className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-sm flex items-center justify-center">
       
-      {/* Modal Container */}
+      {/* 2. MODAL CONTAINER */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         
-        // --- RESPONSIVE POSITIONING & SIZING ---
-        // 1. Mobile (Default): 
-        //    - w-[85%] h-[60%] -> Matches your request for specific sizing
-        //    - p-[20px] -> Minimum padding
-        // 2. Desktop (md+):
-        //    - Reverts to your specific fixed positioning if desired, OR
-        //    - We can keep the centered look but make it larger.
-        //    - Below I kept your original 'md:' overrides to switch to fixed positioning on larger screens.
+        // ADDED CLASS: 'mobile-modal-fix' (Logic is now in your CSS file)
         className="bg-[#1d1836] rounded-2xl border border-white/10 shadow-card flex flex-col
-                   w-[85%] h-[60%] p-[20px]
-                   md:fixed md:w-auto md:h-auto md:inset-auto
+                   mobile-modal-fix 
+                   w-auto mx-[30px] h-auto max-h-[65vh] p-[15px]
+                   md:fixed md:w-auto md:h-auto md:max-h-none md:mx-0 md:inset-auto
                    md:top-[15%] md:bottom-[18%] md:left-[15%] md:right-[10%] md:p-8"
       >
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-secondary hover:text-white text-xl z-10"
+          className="absolute top-3 right-3 text-secondary hover:text-white text-xl z-10 bg-white/5 rounded-full w-8 h-8 flex items-center justify-center transition-all"
         >
           ✕
         </button>
 
         {/* --- HEADER --- */}
-        <div className="mt-2 mb-4 shrink-0">
-          <h2 className="text-white text-3xl font-bold">
+        <div className="mt-1 mb-3 shrink-0 pr-8"> 
+          <h2 className="text-white text-2xl sm:text-3xl font-bold">
             {getModalTitle()}
           </h2>
         </div>
 
-        {/* --- BODY CONTENT (Scrollable) --- */}
-        {/* 'flex-1' makes this fill the remaining height. 'overflow-y-auto' handles scrolling. */}
-        <div className="flex-1 text-secondary text-[16px] leading-[30px] overflow-y-auto pr-2 custom-scrollbar">
+        {/* --- BODY CONTENT --- */}
+        <div className="flex-1 text-secondary text-[15px] sm:text-[16px] leading-[26px] sm:leading-[30px] overflow-y-auto pr-2 custom-scrollbar">
           
-          {/* CASE 1: LEGAL */}
+          {/* CONTENT LOGIC (Legal, Resume, etc.) */}
           {type === "legal" && data && (
             <div className="space-y-4">
               <p className="text-sm text-gray-400 border-b border-white/10 pb-2">
@@ -75,7 +68,6 @@ const GlobalModal = ({ isOpen, onClose, type, data }) => {
             </div>
           )}
 
-          {/* CASE 2: RESUME COLLECTION */}
           {type === "resume-sample-template" && (
             <div>
               <p>Viewing Data for: <span className="text-white">{data?.name}</span></p>
@@ -89,7 +81,6 @@ const GlobalModal = ({ isOpen, onClose, type, data }) => {
             </div>
           )}
           
-          {/* CASE 3: COMING SOON */}
           {data?.isComingSoon && (
              <div className="flex flex-col items-center justify-center py-10 gap-4">
                 <div className="bg-yellow-500 text-black px-4 py-1 rounded-full text-sm font-bold shadow-lg shadow-yellow-500/20">
@@ -105,10 +96,10 @@ const GlobalModal = ({ isOpen, onClose, type, data }) => {
         </div>
 
         {/* --- FOOTER --- */}
-        <div className="mt-6 flex justify-end gap-4 shrink-0 pt-4 border-t border-white/5">
+        <div className="mt-4 flex justify-end gap-4 shrink-0 pt-3 border-t border-white/5">
           <button
             onClick={onClose}
-            className="py-2 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl bg-tertiary hover:bg-white/10 transition-colors"
+            className="py-2 text-red px-6 text-sm sm:text-base outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl bg-tertiary hover:bg-white/10 transition-colors"
           >
             Close
           </button>
@@ -120,3 +111,5 @@ const GlobalModal = ({ isOpen, onClose, type, data }) => {
 };
 
 export default GlobalModal;
+
+

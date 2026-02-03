@@ -269,7 +269,7 @@ const dummyUser = "https://randomuser.me/api/portraits/men/1.jpg";
 const projects = [
   {
     name: "Distributed Banking Core",
-    // displayProjectCount: 1,
+    displayProjectCount: 1,
     isPinned: true,
     short_desc: "High-performance microservices system mimicking core banking operations.",
     period: 'April 2025 - May 2025',
